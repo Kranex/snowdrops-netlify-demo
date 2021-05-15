@@ -52,6 +52,6 @@ collections:
         fields:
         - {label: "Title", name: "title", widget: "text"}
         - {label: "Subtitle", name: "subtitle", widget: "text"}
-        - {label: "Slogan", name: "subtitle", widget: "string"}
+        - {label: "Slogan", name: "slogan", widget: "string"}
         - {label: "Title Background", name: "background", widget: "image"}
         - {label: "Background Copyright", name: "background_cc", widget: "string"}
