@@ -55,3 +55,4 @@ collections:
         - {label: "Slogan", name: "slogan", widget: "string"}
         - {label: "Title Background", name: "background", widget: "image"}
         - {label: "Background Copyright", name: "background_cc", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
