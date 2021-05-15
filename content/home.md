@@ -1,11 +1,9 @@
 ---
-title: >
+title: |
   The Snowdrop
-
   'Hope in Nature'
-subtitle: >
+subtitle: |
   Shepton Mallet Snowdrop Festival
-
   9th to 23rd Febuary 2021
 slogan: A Snowdrop Festival with a Difference
 background: /assets/title-background.jpg
@@ -24,3 +22,17 @@ The first snowdrops are already peeping through but sadly, thanks to coronovirus
 <br/>
 
 [Follow this link to find out more.](/get-involved.html)
+
+![Solitary Splendor - Jacqui Martin, Frome](assets/small-background-picture.jpg "Solitary Splendor - Jacqui Martin, Frome")
+
+Check out what else is on in 2021: 
+​Our [artists and makers](/art-crafts) are back with your favourite pieces, and new work too - visit our online marketplace to contact them directly. 
+
+
+
+The Snowdrop Festival's Bard has been busy with a [poem](/a-little-ditty) written to brighten your day
+
+
+
+Visit the [specialist growers](/specialist-growers) from your the comfort of home - we've added links so you can contact them online 
+​Follow the Festival Trail to enjoy the thousands of snowdrops planted with volunteers over the years
