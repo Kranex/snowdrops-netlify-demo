@@ -10,10 +10,9 @@ const TextBlock = ({component}: Props) => {
   const { title, text } = component;
   
   return (
-    <div className="flex flex-col">
+    <div className="py-5">  
       {title && <>
-        <h1 className="text-green-400 text-3xl text-center">{title}</h1>
-        <div className="h-10" /> 
+        <h1 className="text-green-400 text-3xl text-center pb-5">{title}</h1>
       </>}
       <ReactMarkdown 
         className="text-xl text-white text-justify"

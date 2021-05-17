@@ -1,5 +1,6 @@
 import React from "react";
 import { attributes } from "../../content/james-allen.md"
+import DoubleColumn from "../components/organisms/DoubleColumn";
 import PageBuilder, { PageComponent } from "../components/templates/PageBuilder";
 import TitledPage from "../components/templates/TitledPage";
 
@@ -14,10 +15,7 @@ type IndexAttributes = {
 const JamesAllen = () => {
   return (
     <TitledPage {...(attributes as IndexAttributes)} >
-      <div className='grid grid-cols-2 gap-5 max-w-screen-lg'>
-        <PageBuilder components={attributes.left_column as PageComponent[]} />
-        <PageBuilder components={attributes.right_column as PageComponent[]} />
-      </div>
+        <PageBuilder components={attributes.content as PageComponent[]} />
     </TitledPage>
   );
 }

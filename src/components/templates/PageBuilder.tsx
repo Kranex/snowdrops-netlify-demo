@@ -4,9 +4,10 @@ import FloatingImage from "../organisms/FloatingImage";
 import Gallery from "../organisms/Gallery";
 import TextBlock from "../organisms/TextBlock"
 import DoubleImage from "../organisms/DoubleImage"
+import DoubleColumn from "../organisms/DoubleColumn";
 
 export type PageComponent = {
-  type: 'text_block' | 'image' | 'double_image' | 'floating_image' | 'gallery',
+  type: 'double_column' | 'text_block' | 'image' | 'double_image' | 'floating_image' | 'gallery',
   title?: string
   text?: string
   image?: string
@@ -16,6 +17,8 @@ export type PageComponent = {
   caption?: string
   left_caption?: string
   right_caption?: string
+  left_column?: PageComponent[]
+  right_column?: PageComponent[]
   position?: 'left' | 'right' | 'auto'
 }
 
@@ -29,6 +32,8 @@ const PageBuilder = ({components}: Props) => {
 
   const page = components.map((component, idx) => {
     switch(component.type) {
+      case 'double_column':
+        return <DoubleColumn component={component} />
       case 'text_block':
         return <TextBlock component={component} />
       case 'double_image':
@@ -46,7 +51,6 @@ const PageBuilder = ({components}: Props) => {
             floatCount += 1;
             break;
         }
-
         return <FloatingImage component={component} defaultAlignment={pos} />
       case 'gallery':
         return <Gallery component={component} />
@@ -56,9 +60,9 @@ const PageBuilder = ({components}: Props) => {
 
 
   return (
-    <div className="flex flex-col max-w-screen-lg">
-      { interleave(page, <div className="h-10"/>).map((item, idx) => (<Fragment key={idx}>{item}</Fragment>)) }
-    </ div>
+    <>
+      { page.map((item, idx) => (<Fragment key={idx}>{item}</Fragment>)) }
+    </>
   )
 }
 

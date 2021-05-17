@@ -20,9 +20,8 @@ const Gallery = ({component}: Props) => {
   ))
 
   return (
-    <div className="flex flex-col">
-      {title && <h1 className="text-green-400 text-3xl text-center">{title}</h1>}
-      <div className="h-10" />
+    <div className="flex flex-col p-5">
+      {title && <h1 className="text-green-400 text-3xl text-center pb-5">{title}</h1>}
       <Carousel autoPlay={true} infiniteLoop={true} showArrows={true} showThumbs={false} >
         {items}
       </Carousel>

@@ -5,12 +5,17 @@ import MenuItem from "../molecules/MenuItem"
 const NavBar = () => {
 
   return (
-    <div className="fixed top-0 flex flex-row justify-center w-full bg-black bg-opacity-40 backdrop-filter backdrop-blur">
+    <div className="fixed z-10 top-0 flex flex-row justify-center w-full bg-black bg-opacity-70 backdrop-filter backdrop-blur-xl">
       <div className="flex flex-row justify-end w-full">
-        <div className="flex flex-row p-2 items-center">
+        <div className="hidden md:flex flex-row p-2 items-center">
           <MenuItem label="HOME" href={links.index} />
           <MenuItem label="THANKS FOR GETTING INVOLVED" href={links.thanks} />
           <MenuItem label="JAMES ALLEN'S STORY" href={links.james_allen} />
+        </div>
+        <div className="flex md:hidden flex-row p-2 items-center">
+          <MenuItem label="HOME" href={links.index} />
+          <MenuItem label="THANKS" href={links.thanks} />
+          <MenuItem label="JAMES" href={links.james_allen} />
         </div>
       </div>
     </div>
