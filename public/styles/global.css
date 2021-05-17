@@ -28,6 +28,11 @@ a:hover {
   color: #000;
 }
 
+.frontmatter-markdown > p > img {
+  float: left;
+  margin-right: 10px;
+}
+
 .youtube-container {
   position: relative;
   width: 100%;

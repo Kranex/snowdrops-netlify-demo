@@ -14,8 +14,6 @@ type Props = {
 const ActiveLink = ({ children, className, inactiveClassName, activeClassName, href, as, ...props }: Props) => {
   const { asPath } = useRouter()
 
-  console.log(asPath)
-
   className = 
     asPath === href || asPath === as
       ? `${className} ${activeClassName}`.trim()
