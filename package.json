@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "extract": "scripts/extract_galleries.sh",
-    "export": "yarn extract && next build && next export -o ./dist",
+    "export": "scripts/extract_galleries.sh && next build && next export -o ./dist",
     "test": "jest",
     "proxy": "netlify-cms-proxy-server"
   },
