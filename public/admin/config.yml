@@ -20,6 +20,14 @@ builder_types: &builder_types
     fields:
       - { label: Image, name: image, widget: image }
       - { label: Caption, name: caption,  required: false, widget: string }
+  - label: 'Double Image'
+    name: 'double_image'
+    widget: object
+    fields:
+      - { label: Left Image, name: left_image, widget: image }
+      - { label: Left Caption, name: left_caption,  required: false, widget: string }
+      - { label: Right Image, name: right_image, widget: image }
+      - { label: Right Caption, name: right_caption,  required: false, widget: string }
   - label: 'Floating Image'
     name: 'floating_image'
     widget: object
@@ -75,6 +83,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      
       - label: "Home"
         name: "home"
         file: "content/home.md"
@@ -88,6 +97,7 @@ collections:
           name: "content"
           widget: "list"
           types: *builder_types
+      
       - label: "Thanks for getting involved"
         name: "thanks"
         file: "content/thanks.md"
@@ -97,6 +107,22 @@ collections:
         - {label: "Background Copyright", name: "background_cc", widget: "string"}
         - label: "content"
           name: "content"
+          widget: "list"
+          types: *builder_types
+      
+      - label: "James Allen's Story"
+        name: "james-allen"
+        file: "content/james-allen.md"
+        fields:
+        - {label: "Title", name: "title", widget: "text"}
+        - {label: "Title Background", name: "background", widget: "image"}
+        - {label: "Background Copyright", name: "background_cc", widget: "string"}
+        - label: "Left Column"
+          name: "left_column"
+          widget: "list"
+          types: *builder_types
+        - label: "Right Column"
+          name: "right_column"
           widget: "list"
           types: *builder_types
         

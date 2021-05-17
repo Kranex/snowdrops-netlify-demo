@@ -22,7 +22,7 @@ const Gallery = ({component}: Props) => {
   return (
     <div className="flex flex-col">
       {title && <h1 className="text-green-400 text-3xl text-center">{title}</h1>}
-      <br />
+      <div className="h-10" />
       <Carousel autoPlay={true} infiniteLoop={true} showArrows={true} showThumbs={false} >
         {items}
       </Carousel>
