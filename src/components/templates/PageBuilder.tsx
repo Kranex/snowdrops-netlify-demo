@@ -3,14 +3,19 @@ import { interleave } from "../../../utils/interleave";
 import FloatingImage from "../organisms/FloatingImage";
 import Gallery from "../organisms/Gallery";
 import TextBlock from "../organisms/TextBlock"
+import DoubleImage from "../organisms/DoubleImage"
 
 export type PageComponent = {
-  type: 'text_block' | 'image' | 'floating_image' | 'gallery',
+  type: 'text_block' | 'image' | 'double_image' | 'floating_image' | 'gallery',
   title?: string
   text?: string
   image?: string
+  left_image?: string
+  right_image?: string
   gallery?: string
   caption?: string
+  left_caption?: string
+  right_caption?: string
   position?: 'left' | 'right' | 'auto'
 }
 
@@ -26,6 +31,8 @@ const PageBuilder = ({components}: Props) => {
     switch(component.type) {
       case 'text_block':
         return <TextBlock component={component} />
+      case 'double_image':
+        return <DoubleImage component={component} />
       case 'floating_image':
         const pos = floatCount % 2 ? 'left' : 'right';
         switch (component.position) {
