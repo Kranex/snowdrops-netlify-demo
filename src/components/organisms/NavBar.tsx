@@ -5,7 +5,7 @@ import MenuItem from "../molecules/MenuItem"
 const NavBar = () => {
 
   return (
-    <div className="fixed z-10 top-0 flex flex-row justify-center w-full bg-black backdrop-opacity-50 backdrop-filter backdrop-blur">
+    <div className="fixed z-10 top-0 flex flex-row justify-center w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur">
       <div className="flex flex-row justify-end w-full">
         <div className="hidden md:flex flex-row p-2 items-center">
           <MenuItem label="HOME" href={links.index} />
