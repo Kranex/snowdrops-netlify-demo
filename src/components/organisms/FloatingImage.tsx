@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { PageComponent } from "../templates/PageBuilder"
@@ -20,7 +21,7 @@ const FloatingImage = ({component, defaultAlignment}: Props) => {
 
   return (
     <div className={`flex flex-row gap-5 ${alignment === 'right' ? 'justify-between' : '' }`}>
-      {alignment === 'left' ? content : content.reverse()}
+      {(alignment === 'left' ? content : content.reverse()).map((item, idx) => (<Fragment key={idx}>{item}</Fragment>))}
     </div>
   )
 }

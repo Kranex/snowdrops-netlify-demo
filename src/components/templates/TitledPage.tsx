@@ -1,6 +1,4 @@
 import { ReactNode } from "react"
-import PageBuilder, { PageComponent } from "./PageBuilder"
-
 interface Props {
   title: string
   subtitle?: string

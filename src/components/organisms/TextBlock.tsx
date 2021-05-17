@@ -11,8 +11,10 @@ const TextBlock = ({component}: Props) => {
   
   return (
     <div className="flex flex-col">
-      {title && <h1 className="text-green-400 text-3xl text-center">{title}</h1>}
-      <br />
+      {title && <>
+        <h1 className="text-green-400 text-3xl text-center">{title}</h1>
+        <div className="h-10" /> 
+      </>}
       <ReactMarkdown 
         className="text-xl text-white text-justify"
         rehypePlugins={[rehypeRaw]}
