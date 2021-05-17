@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { interleave } from "../../../utils/interleave";
 import FloatingImage from "../organisms/FloatingImage";
 import Gallery from "../organisms/Gallery";
@@ -21,7 +22,7 @@ const PageBuilder = ({components}: Props) => {
 
   var floatCount = 0;
 
-  const page = components.map((component) => {
+  const page = components.map((component, idx) => {
     switch(component.type) {
       case 'text_block':
         return <TextBlock component={component} />
@@ -49,7 +50,7 @@ const PageBuilder = ({components}: Props) => {
 
   return (
     <div className="flex flex-col max-w-screen-lg">
-      {interleave(page, <br />)}
+      { interleave(page, <div className="h-10"/>).map((item, idx) => (<Fragment key={idx}>{item}</Fragment>)) }
     </ div>
   )
 }
