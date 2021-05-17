@@ -8,7 +8,12 @@ interface Props {
 const MenuItem = ({label, href}: Props) => {
 
   return (
-      <ActiveLink className="border mr-5 px-5 py-2 no-underline text-white" inactiveClassName="border-clear" activeClassName="border-black-500" href={href}>
+      <ActiveLink
+        className="border mr-5 px-5 py-2 no-underline text-white"
+        inactiveClassName="border-clear hover:text-gray-400"
+        activeClassName="border-black-500 hover:text-white" 
+        href={href}
+      >
         <h2>{label}</h2>
       </ActiveLink>
   )  

@@ -7,6 +7,35 @@ local_backend: true
 media_folder: public/assets
 public_folder: assets
 
+builder_types: &builder_types
+  - label: 'Text Block'
+    name: 'text_block'
+    widget: object
+    fields:
+      - { label: Title, name: title, required: false, widget: text }
+      - { label: Text, name: text, widget: markdown }
+  - label: 'Image'
+    name: 'image'
+    widget: object
+    fields:
+      - { label: Image, name: image, widget: image }
+      - { label: Caption, name: caption,  required: false, widget: string }
+  - label: 'Floating Image'
+    name: 'floating_image'
+    widget: object
+    fields:
+      - { label: Image, name: image, widget: image }
+      - { label: Caption, name: caption, required: false, widget: string }
+      - { label: Position, name: position, widget: select, default: auto, options: [left, right, auto]}
+      - { label: Title, name: title, required: false, widget: text }
+      - { label: Text, name: text, widget: markdown }
+  - label: Gallery
+    name: gallery
+    widget: object
+    fields:
+      - { label: Title, name: title, required: false, widget: text }
+      - { label: Gallery Zip, name: gallery, widget: file }
+
 collections:
   - name: "config"
     label: "Config"
@@ -55,4 +84,19 @@ collections:
         - {label: "Slogan", name: "slogan", widget: "string"}
         - {label: "Title Background", name: "background", widget: "image"}
         - {label: "Background Copyright", name: "background_cc", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "content"
+          name: "content"
+          widget: "list"
+          types: *builder_types
+      - label: "Thanks for getting involved"
+        name: "thanks"
+        file: "content/thanks.md"
+        fields:
+        - {label: "Title", name: "title", widget: "text"}
+        - {label: "Title Background", name: "background", widget: "image"}
+        - {label: "Background Copyright", name: "background_cc", widget: "string"}
+        - label: "content"
+          name: "content"
+          widget: "list"
+          types: *builder_types
+        
