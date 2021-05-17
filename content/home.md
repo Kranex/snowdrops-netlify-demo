@@ -39,6 +39,9 @@ content:
     position: left
     image: assets/small-background-picture.jpg
     caption: Solitary Splendor - Jacqui Martin, Frome
+    text: aa
+    title: ""
+  - type: text_block
     text: >-
       ​Our [artists and makers](/art-crafts) are back with your favourite
       pieces, and new work too - visit our online marketplace to contact them

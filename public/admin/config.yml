@@ -7,42 +7,63 @@ local_backend: true
 media_folder: public/assets
 public_folder: assets
 
-builder_types: &builder_types
-  - label: 'Text Block'
-    name: 'text_block'
-    widget: object
-    fields:
-      - { label: Title, name: title, required: false, widget: text }
-      - { label: Text, name: text, widget: markdown }
-  - label: 'Image'
-    name: 'image'
-    widget: object
-    fields:
-      - { label: Image, name: image, widget: image }
-      - { label: Caption, name: caption,  required: false, widget: string }
-  - label: 'Double Image'
-    name: 'double_image'
-    widget: object
-    fields:
-      - { label: Left Image, name: left_image, widget: image }
-      - { label: Left Caption, name: left_caption,  required: false, widget: string }
-      - { label: Right Image, name: right_image, widget: image }
-      - { label: Right Caption, name: right_caption,  required: false, widget: string }
-  - label: 'Floating Image'
-    name: 'floating_image'
-    widget: object
-    fields:
-      - { label: Image, name: image, widget: image }
-      - { label: Caption, name: caption, required: false, widget: string }
-      - { label: Position, name: position, widget: select, default: auto, options: [left, right, auto]}
-      - { label: Title, name: title, required: false, widget: text }
-      - { label: Text, name: text, widget: markdown }
-  - label: Gallery
-    name: gallery
-    widget: object
-    fields:
-      - { label: Title, name: title, required: false, widget: text }
-      - { label: Gallery Zip, name: gallery, widget: file }
+text_block: &text_block
+  name: 'text_block'
+  widget: object
+  fields:
+    - { label: Title, name: title, required: false, widget: text }
+    - { label: Text, name: text, widget: markdown }
+image: &image
+  label: 'Image'
+  name: 'image'
+  widget: object
+  fields:
+    - { label: Image, name: image, widget: image }
+    - { label: Caption, name: caption,  required: false, widget: string }
+double_image: &double_image    
+  label: 'Double Image'
+  name: 'double_image'
+  widget: object
+  fields:
+    - { label: Left Image, name: left_image, widget: image }
+    - { label: Left Caption, name: left_caption,  required: false, widget: string }
+    - { label: Right Image, name: right_image, widget: image }
+    - { label: Right Caption, name: right_caption,  required: false, widget: string }
+gallery: &gallery
+  label: Gallery
+  name: gallery
+  widget: object
+  fields:
+    - { label: Title, name: title, required: false, widget: text }
+    - { label: Gallery Zip, name: gallery, widget: file }
+ 
+basic_types: &basic_types
+  - *text_block
+  - *image
+  - *double_image
+  - *gallery
+
+double_column: &double_column
+  label: 'Double Column'
+  name: 'double_column'
+  widget: object
+  fields:
+    - label: Left Column
+      name: left_column
+      widget: list
+      types: *basic_types
+    - label: Right Column 
+      name: right_column
+      widget: list
+      types: *basic_types
+
+block_types: &block_types
+  - *text_block
+  - *image
+  - *double_image
+  - *gallery
+  - *double_column
+
 
 collections:
   - name: "config"
@@ -96,7 +117,7 @@ collections:
         - label: "content"
           name: "content"
           widget: "list"
-          types: *builder_types
+          types: *block_types
       
       - label: "Thanks for getting involved"
         name: "thanks"
@@ -108,7 +129,7 @@ collections:
         - label: "content"
           name: "content"
           widget: "list"
-          types: *builder_types
+          types: *block_types
       
       - label: "James Allen's Story"
         name: "james-allen"
@@ -117,12 +138,8 @@ collections:
         - {label: "Title", name: "title", widget: "text"}
         - {label: "Title Background", name: "background", widget: "image"}
         - {label: "Background Copyright", name: "background_cc", widget: "string"}
-        - label: "Left Column"
-          name: "left_column"
+        - label: "content"
+          name: "content"
           widget: "list"
-          types: *builder_types
-        - label: "Right Column"
-          name: "right_column"
-          widget: "list"
-          types: *builder_types
+          types: *block_types
         
