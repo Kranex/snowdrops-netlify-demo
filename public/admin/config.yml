@@ -9,53 +9,53 @@ public_folder: assets
 
  
 block_types: &block_types
-  - label: Text
-    name: text
+  - name: text
+    label: Text
     widget: object
     fields:
-      - { label: Text, name: text, required: false, widget: markdown }
-  - label: Image
-    name: image
+      - { name: text, label: Text, widget: markdown, required: false }
+  - name: image
+    label: Image
     widget: object
     fields:
-      - { label: Image, name: image, widget: image }
-      - { label: Caption, name: caption,  required: false, widget: string }
-  - label: Double Image
-    name: double_image
+      - { name: image, label: Image, widget: image }
+      - { name: caption,  label: Caption, widget: string, required: false }
+  - name: double_image
+    label: Double Image
     widget: object
     fields:
-      - { label: Left Image, name: left_image, widget: image }
-      - { label: Left Caption, name: left_caption,  required: false, widget: string }
-      - { label: Right Image, name: right_image, widget: image }
-      - { label: Right Caption, name: right_caption,  required: false, widget: string }
-  - label: Gallery
-    name: gallery
+      - { name: left_image, label: Left Image, widget: image }
+      - { name: left_caption, label: Left Caption, widget: string, required: false }
+      - { name: right_image, label: Right Image, widget: image }
+      - { name: right_caption, label: Right Caption, widget: string, required: false }
+  - name: gallery
+    label: Gallery
     widget: object
     fields:
-      - { label: Title, name: title, required: false, widget: text }
-      - { label: Gallery Zip, name: gallery, widget: file }
+      - { name: title, label: Title, widget: text, required: false }
+      - { name: gallery, label: Gallery Zip, widget: file }
 
 single_column: &single_column
-  label: Single Column
   name: single_column
+  label: Single Column
   widget: object
   fields:
-    - label: Column
-      name: content
+    - name: content
+      label: Column
       widget: list
       types: *block_types
 
 double_column: &double_column
-  label: Double Column
   name: double_column
+  label: Double Column
   widget: object
   fields:
-    - label: Left Column
-      name: left_column
+    - name: left_column
+      label: Left Column
       widget: list
       types: *block_types
-    - label: Right Column 
-      name: right_column
+    - name: right_column
+      label: Right Column 
       widget: list
       types: *block_types
 
@@ -71,77 +71,78 @@ collections:
     editor:
       preview: false
     files:
-      - label: Navigation Bar
-        name: navbar
+      - name: navbar
+        label: Navigation Bar
         file: content/navbar.yml
         fields:
-          - label: Links
-            name: links
+          - name: links
+            label: Links
             widget: list
             fields:
-              - {label: Label, name: label, widget: string}
-              - label: Page
-                name: page
+              - { name: label, label: Label, widget: string }
+              - name: page
+                label: Page
                 widget: relation
                 collection: pages
                 value_field: '{{slug}}'
                 search_fields:  [ '{{slug}}' ]
                 display_fields: [ '{{slug}}' ]
-      - label: Home Page
-        name: home_page
+      - name: home_page
+        label: Home Page
         file: content/home.yml
         fields:
-        - {label: Title, name: title, widget: text}
-        - {label: Subtitle, name: subtitle, widget: text}
-        - {label: Slogan, name: slogan, widget: string}
-        - {label: Title Background, name: background, widget: image}
-        - {label: Background Copyright, name: background_cc, widget: string}
-        - label: content
-          name: content
+        - { name: title, label: Title, widget: text }
+        - { name: subtitle, label: Subtitle, widget: text }
+        - { name: slogan, label: Slogan, widget: string }
+        - { name: background, label: Title Background, widget: image }
+        - { name: background_cc, label: Background Copyright, widget: string }
+        - name: content
+          label: content
           widget: list
           types: *layout_types
-      - label: Footer
-        name: footer
+      - name: footer
+        label: Footer
         file: content/footer.yml
         fields:
-          - {label: Company Info, name: company_info, widget: text}
-          - {logo: Logo, name: logo, widget: image}
-          - {label: Copyright, name: copyright, widget: string}
-          - {label: Facebook Link, name: facebook, widget: string}
-          - {label: Twitter Link, name: twitter, widget: string}
-          - {label: Instagram Link, name: instagram, widget: string}
-          - {label: Email Link, name: email, widget: string}
-      - label: Site Config
-        name: general
+          - { name: company_info, label: Company Info, widget: text }
+          - { name: logo, label: Logo, widget: image }
+          - { name: copyright, label: Copyright, widget: string }
+          - { name: facebook, label: Facebook Link, widget: string }
+          - { name: twitter, label: Twitter Link, widget: string }
+          - { name: instagram, label: Instagram Link, widget: string }
+          - { name: email, label: Email Link, widget: string }
+      - name: general
+        label: General
         file: config.json
         description: General site settings
         fields:
-          - label: URL
-            name: base_url
+          - name: base_url
+            label: URL
             widget: string
             hint: Do not enter the trailing slash of the URL
-          - label: Site title
-            name: site_title
+          - name: site_title
+            label: Site title
             widget: string
-          - label: Site description
-            name: site_description
+          - name: site_description
+            label: Site description
             widget: string
-          - label: Site keywords
-            name: site_keywords
+          - name: site_keywords
+            label: Site keywords
             widget: list
             summary: "{{fields.keyword.keyword}}"
             field:
               label: Keyword
               name: keyword
               widget: string
-          - label: Twitter account
-            name: twitter_account
+          - name: twitter_account
+            label: Twitter account
             widget: string
-          - label: GitHub account
-            name: github_account
+          - name: github_account
+            label: GitHub account
             widget: string
-  - label: Pages
-    name: pages
+  - name: pages
+    label: Pages
+    label_singular: Page
     folder: content/pages
     create: true
     extension: yml
@@ -150,12 +151,9 @@ collections:
     slug: '{{path}}'
     identifier_field: title
     fields:
-      - {label: Path, name: path, widget: string, pattern: ['^[a-z0-9\-]+$', "Only lowercase letters, numbers, and dashes"]}
-      - {label: Title, name: title, widget: text}
-      - {label: Title Background, name: background, widget: image}
-      - {label: Background Copyright, name: background_cc, widget: string}
-      - label: content
-        name: content
-        widget: list
-        types: *layout_types
+      - { label: Path, name: path, widget: string, pattern: [ '^[a-z0-9\-]+$', "Only lowercase letters, numbers, and dashes" ] }
+      - { label: Title, name: title, widget: text }
+      - { label: Title Background, name: background, widget: image }
+      - { label: Background Copyright, name: background_cc, widget: string }
+      - { label: content, name: content, widget: list, types: *layout_types }
       
