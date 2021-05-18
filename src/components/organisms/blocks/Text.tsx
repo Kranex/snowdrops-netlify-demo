@@ -9,7 +9,7 @@ const TextBlock = ({component}: Props) => {
   const { text } = component;
   return (
     <ReactMarkdown 
-      className="text-xl text-white text-justify"
+      className="text-xl text-white text-justify px-2"
       skipHtml
       components={{
         h1: ({node, ...props}) => <h1 className="text-green-400 text-3xl text-center py-2" {...props} />,

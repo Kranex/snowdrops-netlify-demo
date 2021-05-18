@@ -7,35 +7,27 @@ interface Props {
   defaultAlignment?: 'left' | 'right',
 }
 
-const getAlignment = (position: string) => {
-  switch (position) {
-    case 'left':
-    case 'right':
-    case 'center':
-      return position;
-    default:
-      return null;
-  }
-}
-
 const ImageBlock = ({component, defaultAlignment}: Props) => {
   const classes = `
-    md:width-1/4 md:width-1/3 md:width-1/2 md:width-full
-    md:float-left md:float-right
+    lg:width-1/4 lg:width-1/3 lg:width-1/2 lg:width-full
+    float-left float-right lg:float-left lg:float-right
     aspect-ratio-none aspect-ratio-1/1 aspect-ratio-3/2 aspect-ratio-2/3 aspect-ratio-4/3 aspect-ratio-3/4 aspect-ratio-16/9 aspect-ratio-9/16
   `;
 
-  const { image, caption, width, aspect, position } = component;
+  const { image, caption, width, aspect, position, position_mobile } = component;
   
-  const alignment = getAlignment(position) || defaultAlignment;
+  const alignment = position === 'auto' ? defaultAlignment : position
+  const alignmentMobile = position_mobile === 'auto' ? alignment : position_mobile
 
   
-  const float = alignment !== 'center' ? `md:float-${alignment}` : 'mx-auto'
+  const float = alignment !== 'center' && `float-${alignment}`
+  const floatMobile = alignmentMobile !== 'center' && `float-${alignmentMobile}`
 
+  const size =  alignmentMobile === 'center' ? `w-1/2 lg:w-${width}` : `w-${width}`
   // return <img className={`object-scale-down w-full md:w-1/3 md:py-4 ${float} ${padding}`} src={image} />
 
   return (
-    <div className={`relative w-full md:w-${width} p-2 md:py-4 ${float}`}>
+    <div className={`relative ${size} Mobile mx-auto p-2 lg:py-4 ${floatMobile} lg:${float}`}>
       <div className={`relative`}>
         {aspect !== 'none' && <div className={`aspect-ratio-${aspect}`} />}
         <img className={`${aspect !=='none' && 'absolute'} left-0 top-0 w-full h-full object-cover`} src={image} />

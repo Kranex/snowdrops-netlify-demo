@@ -21,6 +21,7 @@ block_types: &block_types
       - { name: image, label: Image, widget: image }
       - { name: caption,  label: Caption, widget: string, required: false }
       - { name: position, label: Position, widget: select, default: auto, options: [ auto, left, center, right ]}
+      - { name: position_mobile, label: Position (Mobile View), widget: select, default: auto, options: [ auto, left, center, right ]}
       - name: width
         label: Relative Width
         widget: select

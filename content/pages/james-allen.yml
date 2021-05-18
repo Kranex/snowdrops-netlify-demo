@@ -35,12 +35,14 @@ content:
         image: assets/merlin-dw_orig.jpg
         caption: Merlin
         aspect: 2/3
+        position_mobile: auto
       - type: image
         position: right
         width: 1/2
         image: assets/magnet-dw_orig.jpg
         caption: Magnet
         aspect: 2/3
+        position_mobile: auto
       - type: text
         text: >-
           Merlin’s inner flower segments are completely green, and Magnet has an

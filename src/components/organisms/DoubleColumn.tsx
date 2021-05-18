@@ -9,7 +9,7 @@ const DoubleColumn = ({component}: Props) => {
   const { left_column, right_column } = component;
 
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-5 items-center px-5">
+    <div className="flex flex-col lg:grid lg:grid-cols-2 items-center">
         <div className="h-full">
             <PageBuilder components={left_column} />
         </div>

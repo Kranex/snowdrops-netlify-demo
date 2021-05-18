@@ -21,7 +21,8 @@ export type PageComponent = {
   content?: PageComponent[]
   left_column?: PageComponent[]
   right_column?: PageComponent[]
-  position?: 'left' | 'right' | 'auto'
+  position?: 'left' | 'right' | 'center' | 'auto'
+  position_mobile?: 'left' | 'right' |  'center' | 'auto'
 }
 
 interface Props {
