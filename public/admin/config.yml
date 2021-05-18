@@ -4,6 +4,8 @@ backend:
 
 local_backend: true
 
+publish_mode: editorial_workflow
+
 media_folder: public/assets
 public_folder: assets
 
@@ -79,19 +81,15 @@ collections:
           - label: Links
             name: links
             widget: list
-            types:
-              - label: Link
-                name: link
-                widget: object
-                fields:
-                  - {label: Label, name: label, widget: string}
-                  - label: Page
-                    name: page
-                    widget: relation
-                    collection: pages
-                    value_field: '{{slug}}'
-                    search_fields:  [ title ]
-                    display_fields: [ '{{slug}}' ]
+            fields:
+              - {label: Label, name: label, widget: string}
+              - label: Page
+                name: page
+                widget: relation
+                collection: pages
+                value_field: '{{slug}}'
+                search_fields:  [ '{{slug}}' ]
+                display_fields: [ '{{slug}}' ]
       - label: Home Page
         name: home_page
         file: content/home.md

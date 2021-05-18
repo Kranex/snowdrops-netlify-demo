@@ -5,7 +5,7 @@ title: |
 subtitle: |
   Shepton Mallet Snowdrop Festival
   9th to 23rd Febuary 2021
-slogan: A Snowdrop Festival with a Difference
+slogan: A Snowdrop Festival with a Difference.
 background: /assets/title-background.jpg
 background_cc: ​​© 2020 Solitary Splendor - Jacqui Martin, Frome
 content:
