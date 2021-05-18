@@ -1,4 +1,4 @@
-import { PageComponent } from "../templates/PageBuilder"
+import { PageComponent } from "../../templates/PageBuilder"
 
 interface Props {
   component: PageComponent,

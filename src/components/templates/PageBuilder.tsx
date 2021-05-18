@@ -1,9 +1,8 @@
 import { Fragment } from "react";
-import { interleave } from "../../../utils/interleave";
-import ImageBlock from "../organisms/ImageBlock";
-import Gallery from "../organisms/Gallery";
-import TextBlock from "../organisms/TextBlock"
-import DoubleImage from "../organisms/DoubleImage"
+import ImageBlock from "../organisms/blocks/Image";
+import Gallery from "../organisms/blocks/Gallery";
+import TextBlock from "../organisms/blocks/Text"
+import DoubleImage from "../organisms/blocks/DoubleImage"
 import DoubleColumn from "../organisms/DoubleColumn";
 import SingleColumn from "../organisms/SingleColumn";
 

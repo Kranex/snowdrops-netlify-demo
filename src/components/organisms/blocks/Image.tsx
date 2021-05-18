@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import { PageComponent } from "../templates/PageBuilder"
-import TextBlock from "./TextBlock";
+import { PageComponent } from "../../templates/PageBuilder"
+import TextBlock from "./Text";
 
 interface Props {
   component: PageComponent,

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:proxy": "sh -c 'yarn proxy & yarn dev & wait'",
     "build": "next build",
     "start": "next start",
     "extract:galleries": "scripts/extract_galleries.sh",

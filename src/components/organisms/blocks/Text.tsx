@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import { PageComponent } from "../templates/PageBuilder"
+import { PageComponent } from "../../templates/PageBuilder"
 
 interface Props {
   component: PageComponent,

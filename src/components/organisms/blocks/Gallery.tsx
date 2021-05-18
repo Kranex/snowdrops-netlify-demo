@@ -1,8 +1,7 @@
-import { PageComponent } from "../templates/PageBuilder";
+import { PageComponent } from "../../templates/PageBuilder";
 import { Carousel } from 'react-responsive-carousel';
-import Image from 'next/image';
 
-import galleries from '../../../public/assets/galleries/manifest.yml'
+import galleries from '../../../../public/assets/galleries/manifest.yml'
 
 interface Props {
   component: PageComponent,
