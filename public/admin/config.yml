@@ -8,21 +8,21 @@ media_folder: public/assets
 public_folder: assets
 
 text_block: &text_block
-  name: 'text_block'
+  name: text_block
   widget: object
   fields:
     - { label: Title, name: title, required: false, widget: text }
     - { label: Text, name: text, widget: markdown }
 image: &image
-  label: 'Image'
-  name: 'image'
+  label: Image
+  name: image
   widget: object
   fields:
     - { label: Image, name: image, widget: image }
     - { label: Caption, name: caption,  required: false, widget: string }
 double_image: &double_image    
-  label: 'Double Image'
-  name: 'double_image'
+  label: Double Image
+  name: double_image
   widget: object
   fields:
     - { label: Left Image, name: left_image, widget: image }
@@ -44,8 +44,8 @@ basic_types: &basic_types
   - *gallery
 
 double_column: &double_column
-  label: 'Double Column'
-  name: 'double_column'
+  label: Double Column
+  name: double_column
   widget: object
   fields:
     - label: Left Column
@@ -66,80 +66,96 @@ block_types: &block_types
 
 
 collections:
-  - name: "config"
-    label: "Config"
+  - name: config
+    label: Config
     delete: false
     editor:
       preview: false
     files:
-      - name: "general"
-        label: "Site Config"
-        file: "config.json"
-        description: "General site settings"
+      - label: Navigation Bar
+        name: navbar
+        file: content/navbar.md
         fields:
-          - label: "URL"
-            name: "base_url"
-            widget: "string"
-            hint: "Do not enter the trailing slash of the URL"
-          - label: "Site title"
-            name: "site_title"
-            widget: "string"
-          - label: "Site description"
-            name: "site_description"
-            widget: "string"
-          - label: "Site keywords"
-            name: "site_keywords"
-            widget: "list"
+          - label: Links
+            name: links
+            widget: list
+            types:
+              - label: Link
+                name: link
+                widget: object
+                fields:
+                  - {label: Label, name: label, widget: string}
+                  - label: Page
+                    name: page
+                    widget: relation
+                    collection: pages
+                    value_field: name
+                    search_fields:  [name, title]
+      - label: Home Page
+        name: home_page
+        file: content/home.md
+        fields:
+        - {label: Title, name: title, widget: text}
+        - {label: Subtitle, name: subtitle, widget: text}
+        - {label: Slogan, name: slogan, widget: string}
+        - {label: Title Background, name: background, widget: image}
+        - {label: Background Copyright, name: background_cc, widget: string}
+        - label: content
+          name: content
+          widget: list
+          types: *block_types
+      - label: Footer
+        name: footer
+        file: content/footer.md
+        fields:
+          - {label: Company Info, name: company_info, widget: text}
+          - {logo: Logo, name: logo, widget: image}
+          - {label: Copyright, name: copyright, widget: string}
+          - {label: Facebook Link, name: facebook, widget: string}
+          - {label: Twitter Link, name: twitter, widget: string}
+          - {label: Instagram Link, name: instagram, widget: string}
+          - {label: Email Link, name: email, widget: string}
+      - label: Site Config
+        name: general
+        file: config.json
+        description: General site settings
+        fields:
+          - label: URL
+            name: base_url
+            widget: string
+            hint: Do not enter the trailing slash of the URL
+          - label: Site title
+            name: site_title
+            widget: string
+          - label: Site description
+            name: site_description
+            widget: string
+          - label: Site keywords
+            name: site_keywords
+            widget: list
             summary: "{{fields.keyword.keyword}}"
             field:
               label: Keyword
               name: keyword
-              widget: "string"
-          - label: "Twitter account"
-            name: "twitter_account"
-            widget: "string"
-          - label: "GitHub account"
-            name: "github_account"
-            widget: "string"
-  - name: "pages"
-    label: "Pages"
-    files:
+              widget: string
+          - label: Twitter account
+            name: twitter_account
+            widget: string
+          - label: GitHub account
+            name: github_account
+            widget: string
+  - label: Pages
+    name: pages
+    folder: content/pages
+    create: true
+    identifier_field: name
+    fields:
+      - {label: Name, name: name, widget: string}
+      - {label: Title, name: title, widget: text}
+      - {label: Title Background, name: background, widget: image}
+      - {label: Background Copyright, name: background_cc, widget: string}
+      - label: content
+        name: content
+        widget: list
+        types: *block_types
       
-      - label: "Home"
-        name: "home"
-        file: "content/home.md"
-        fields:
-        - {label: "Title", name: "title", widget: "text"}
-        - {label: "Subtitle", name: "subtitle", widget: "text"}
-        - {label: "Slogan", name: "slogan", widget: "string"}
-        - {label: "Title Background", name: "background", widget: "image"}
-        - {label: "Background Copyright", name: "background_cc", widget: "string"}
-        - label: "content"
-          name: "content"
-          widget: "list"
-          types: *block_types
-      
-      - label: "Thanks for getting involved"
-        name: "thanks"
-        file: "content/thanks.md"
-        fields:
-        - {label: "Title", name: "title", widget: "text"}
-        - {label: "Title Background", name: "background", widget: "image"}
-        - {label: "Background Copyright", name: "background_cc", widget: "string"}
-        - label: "content"
-          name: "content"
-          widget: "list"
-          types: *block_types
-      
-      - label: "James Allen's Story"
-        name: "james-allen"
-        file: "content/james-allen.md"
-        fields:
-        - {label: "Title", name: "title", widget: "text"}
-        - {label: "Title Background", name: "background", widget: "image"}
-        - {label: "Background Copyright", name: "background_cc", widget: "string"}
-        - label: "content"
-          name: "content"
-          widget: "list"
-          types: *block_types
-        

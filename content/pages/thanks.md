@@ -1,4 +1,5 @@
 ---
+name: thanks
 title: Thanks for getting Involved
 background: assets/title-background.jpg
 background_cc: © 2020 Solitary Splendor - Jacqui Martin, Frome

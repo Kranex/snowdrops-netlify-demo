@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { interleave } from "../../../utils/interleave";
-import FloatingImage from "../organisms/FloatingImage";
+import Image from "../organisms/Image";
 import Gallery from "../organisms/Gallery";
 import TextBlock from "../organisms/TextBlock"
 import DoubleImage from "../organisms/DoubleImage"
@@ -38,7 +38,7 @@ const PageBuilder = ({components}: Props) => {
         return <TextBlock component={component} />
       case 'double_image':
         return <DoubleImage component={component} />
-      case 'floating_image':
+      case 'image':
         const pos = floatCount % 2 ? 'left' : 'right';
         switch (component.position) {
           case 'left':
@@ -51,7 +51,7 @@ const PageBuilder = ({components}: Props) => {
             floatCount += 1;
             break;
         }
-        return <FloatingImage component={component} defaultAlignment={pos} />
+        return <Image component={component} defaultAlignment={pos} />
       case 'gallery':
         return <Gallery component={component} />
     }
