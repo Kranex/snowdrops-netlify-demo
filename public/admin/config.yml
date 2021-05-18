@@ -20,6 +20,12 @@ block_types: &block_types
     fields:
       - { name: image, label: Image, widget: image }
       - { name: caption,  label: Caption, widget: string, required: false }
+      - { name: position, label: Position, widget: select, default: auto, options: [ auto, left, center, right ]}
+      - name: width
+        label: Relative Width
+        widget: select
+        default: 1/3
+        options: [ 1/4, 1/3, 1/2, { label: 100%, value: full }]
   - name: double_image
     label: Double Image
     widget: object

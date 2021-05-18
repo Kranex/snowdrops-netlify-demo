@@ -15,6 +15,7 @@ export type PageComponent = {
   right_image?: string
   gallery?: string
   caption?: string
+  width?: string
   left_caption?: string
   right_caption?: string
   content?: PageComponent[]

@@ -18,29 +18,28 @@ const getAlignment = (position: string) => {
   }
 }
 
-const getPadding = (alignment: string) => {
-  switch (alignment) {
-    case 'left':
-      return `pr-4`
-    case 'right':
-      return `pl-4`
-    case 'center':
-      return `px-2`
-  }
-}
-
 const ImageBlock = ({component, defaultAlignment}: Props) => {
-  const classes = 'pr-4 px-2 md:float-left md:float-right';
+  const classes = 'md:width-1/4 md:width-1/3 md:width-1/2 md:width-full md:float-left md:float-right';
 
-  const { image, caption, position } = component;
+  const { image, caption, width, position } = component;
   
   const alignment = getAlignment(position) || defaultAlignment;
 
-  const padding = getPadding(alignment);
   
   const float = alignment !== 'center' ? `md:float-${alignment}` : 'mx-auto'
 
-  return <img className={`object-scale-down w-full md:w-1/3 md:py-4 ${float} ${padding}`} src={image} />
+  // return <img className={`object-scale-down w-full md:w-1/3 md:py-4 ${float} ${padding}`} src={image} />
+
+  return (
+    <div className={`relative w-full md:w-${width} p-2 md:py-4 ${float}`}>
+      <div className={`relative w-full`}>
+        <img className={`object-cover w-full`} src={image} />
+        { caption &&
+          <figcaption className={`absolute text-white w-full bottom-0 text-center py-2 bg-black bg-opacity-40 backdrop-filter backdrop-blur`}>{caption}</figcaption>
+        }
+      </div>
+    </div>
+  )
 }
 
 export default ImageBlock
