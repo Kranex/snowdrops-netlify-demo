@@ -9,7 +9,7 @@ interface Props {
 
 const ImageBlock = ({component, defaultAlignment}: Props) => {
   const classes = `
-    lg:width-1/4 lg:width-1/3 lg:width-1/2 lg:width-full
+    w-1/4 w-1/3 w-1/2 w-full lg:w-1/4 lg:w-1/3 lg:w-1/2 lg:w-full
     float-left float-right lg:float-left lg:float-right
     aspect-ratio-none aspect-ratio-1/1 aspect-ratio-3/2 aspect-ratio-2/3 aspect-ratio-4/3 aspect-ratio-3/4 aspect-ratio-16/9 aspect-ratio-9/16
   `;
