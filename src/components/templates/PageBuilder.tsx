@@ -1,13 +1,14 @@
 import { Fragment } from "react";
 import { interleave } from "../../../utils/interleave";
-import Image from "../organisms/Image";
+import ImageBlock from "../organisms/ImageBlock";
 import Gallery from "../organisms/Gallery";
 import TextBlock from "../organisms/TextBlock"
 import DoubleImage from "../organisms/DoubleImage"
 import DoubleColumn from "../organisms/DoubleColumn";
+import SingleColumn from "../organisms/SingleColumn";
 
 export type PageComponent = {
-  type: 'double_column' | 'text_block' | 'image' | 'double_image' | 'floating_image' | 'gallery',
+  type: 'single_column' | 'double_column' | 'text' | 'image' | 'double_image' | 'gallery',
   title?: string
   text?: string
   image?: string
@@ -17,6 +18,7 @@ export type PageComponent = {
   caption?: string
   left_caption?: string
   right_caption?: string
+  content?: PageComponent[]
   left_column?: PageComponent[]
   right_column?: PageComponent[]
   position?: 'left' | 'right' | 'auto'
@@ -32,9 +34,11 @@ const PageBuilder = ({components}: Props) => {
 
   const page = components.map((component, idx) => {
     switch(component.type) {
+      case 'single_column':
+        return <SingleColumn component={component} />
       case 'double_column':
         return <DoubleColumn component={component} />
-      case 'text_block':
+      case 'text':
         return <TextBlock component={component} />
       case 'double_image':
         return <DoubleImage component={component} />
@@ -51,7 +55,7 @@ const PageBuilder = ({components}: Props) => {
             floatCount += 1;
             break;
         }
-        return <Image component={component} defaultAlignment={pos} />
+        return <ImageBlock component={component} defaultAlignment={pos} />
       case 'gallery':
         return <Gallery component={component} />
     }

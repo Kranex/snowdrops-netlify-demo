@@ -18,14 +18,14 @@ type StaticPathType = { params: { slug: string } }
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.resolve(process.cwd(), 'content/pages'))
   const paths: StaticPathType[] = files
-    .map(file => file.replace(/\.md$/, ''))
+    .map(file => file.replace(/\.yml$/, ''))
     .map(file => ({ params: { slug: file } }))
 
   return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }: StaticPathType ) {
-  const { attributes } = require(`../../content/pages/${params.slug}.md`)
+  const attributes = require(`../../content/pages/${params.slug}.yml`)
 
   return { props: {attributes} }
 }

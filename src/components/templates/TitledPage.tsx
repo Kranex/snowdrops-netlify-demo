@@ -23,10 +23,8 @@ const TitledPage = ({title, subtitle, slogan, background, background_cc, childre
           <h2 className="w-full text-right p-2 font-medium text-white">{background_cc}</h2>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="gap-10 max-w-screen-xl py-10 px-14">
+      <div className="flex flex-col justify-center py-10 px-14">
           {children}
-        </div>
       </div>
     </div>
   )

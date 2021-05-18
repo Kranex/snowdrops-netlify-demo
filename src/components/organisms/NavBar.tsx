@@ -1,4 +1,4 @@
-import { attributes } from '../../../content/navbar.md'
+import attributes from '../../../content/navbar.yml'
 import MenuItem from "../molecules/MenuItem"
 
 type NavLink = {

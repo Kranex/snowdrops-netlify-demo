@@ -29,7 +29,7 @@ const getPadding = (alignment: string) => {
   }
 }
 
-const Image = ({component, defaultAlignment}: Props) => {
+const ImageBlock = ({component, defaultAlignment}: Props) => {
   const classes = 'pr-4 px-2 md:float-left md:float-right';
 
   const { image, caption, position } = component;
@@ -43,4 +43,4 @@ const Image = ({component, defaultAlignment}: Props) => {
   return <img className={`object-scale-down w-full md:w-1/3 md:py-4 ${float} ${padding}`} src={image} />
 }
 
-export default Image
+export default ImageBlock

@@ -1,4 +1,4 @@
-import { attributes } from '../../content/home.md'
+import attributes from '../../content/home.yml'
 import PageBuilder, { PageComponent } from '../components/templates/PageBuilder';
 import TitledPage from '../components/templates/TitledPage';
 

@@ -1,4 +1,4 @@
-import { attributes, react as HomeContent } from '../../../content/footer.md'
+import  attributes from '../../../content/footer.yml'
 import IconLink from '../atoms/IconLink'
 
 import { library } from "@fortawesome/fontawesome-svg-core"
