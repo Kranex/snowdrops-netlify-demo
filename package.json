@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "extract": "scripts/extract_galleries.sh",
+    "extract:galleries": "scripts/extract_galleries.sh",
     "export": "scripts/extract_galleries.sh && next build && next export -o ./dist",
     "test": "jest",
     "proxy": "netlify-cms-proxy-server"
