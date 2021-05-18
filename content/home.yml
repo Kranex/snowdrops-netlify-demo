@@ -31,13 +31,9 @@ content:
       - type: image
         position: left
         image: assets/small-background-picture.jpg
-        caption: One
-        width: 1/2
-      - type: image
-        position: auto
-        image: assets/small-background-picture.jpg
-        width: 1/2
-        caption: Two
+        caption: ""
+        width: 1/3
+        aspect: 1/1
       - type: text
         text: >-
           # Check out what else is on in 2021

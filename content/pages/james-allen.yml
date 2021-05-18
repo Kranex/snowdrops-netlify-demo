@@ -29,11 +29,18 @@ content:
 
 
           However all was not lost. Two of the varieties he bred at his home in Shepton Mallet - ‘Merlin’ and ‘Magnet’ - still survive to this day.
-      - type: double_image
-        left_image: assets/merlin-dw_orig.jpg
-        left_caption: Merlin
-        right_caption: Magnet
-        right_image: assets/magnet-dw_orig.jpg
+      - type: image
+        position: left
+        width: 1/2
+        image: assets/merlin-dw_orig.jpg
+        caption: Merlin
+        aspect: 2/3
+      - type: image
+        position: right
+        width: 1/2
+        image: assets/magnet-dw_orig.jpg
+        caption: Magnet
+        aspect: 2/3
       - type: text
         text: >-
           Merlin’s inner flower segments are completely green, and Magnet has an

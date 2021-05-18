@@ -19,9 +19,13 @@ const getAlignment = (position: string) => {
 }
 
 const ImageBlock = ({component, defaultAlignment}: Props) => {
-  const classes = 'md:width-1/4 md:width-1/3 md:width-1/2 md:width-full md:float-left md:float-right';
+  const classes = `
+    md:width-1/4 md:width-1/3 md:width-1/2 md:width-full
+    md:float-left md:float-right
+    aspect-ratio-none aspect-ratio-1/1 aspect-ratio-3/2 aspect-ratio-2/3 aspect-ratio-4/3 aspect-ratio-3/4 aspect-ratio-16/9 aspect-ratio-9/16
+  `;
 
-  const { image, caption, width, position } = component;
+  const { image, caption, width, aspect, position } = component;
   
   const alignment = getAlignment(position) || defaultAlignment;
 
@@ -32,8 +36,9 @@ const ImageBlock = ({component, defaultAlignment}: Props) => {
 
   return (
     <div className={`relative w-full md:w-${width} p-2 md:py-4 ${float}`}>
-      <div className={`relative w-full`}>
-        <img className={`object-cover w-full`} src={image} />
+      <div className={`relative`}>
+        {aspect !== 'none' && <div className={`aspect-ratio-${aspect}`} />}
+        <img className={`${aspect !=='none' && 'absolute'} left-0 top-0 w-full h-full object-cover`} src={image} />
         { caption &&
           <figcaption className={`absolute text-white w-full bottom-0 text-center py-2 bg-black bg-opacity-40 backdrop-filter backdrop-blur`}>{caption}</figcaption>
         }

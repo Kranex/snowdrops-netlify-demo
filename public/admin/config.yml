@@ -26,14 +26,11 @@ block_types: &block_types
         widget: select
         default: 1/3
         options: [ 1/4, 1/3, 1/2, { label: 100%, value: full }]
-  - name: double_image
-    label: Double Image
-    widget: object
-    fields:
-      - { name: left_image, label: Left Image, widget: image }
-      - { name: left_caption, label: Left Caption, widget: string, required: false }
-      - { name: right_image, label: Right Image, widget: image }
-      - { name: right_caption, label: Right Caption, widget: string, required: false }
+      - name: aspect
+        label:  aspect-ratio
+        widget: select
+        default: 'none'
+        options: [ { label: default, value: 'none' }, 1/1, 3/2, 2/3, 4/3, 3/4, 16/9, 9/16 ]
   - name: gallery
     label: Gallery
     widget: object

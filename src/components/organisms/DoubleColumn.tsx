@@ -10,10 +10,10 @@ const DoubleColumn = ({component}: Props) => {
 
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-5 items-center px-5">
-        <div className="flex flex-col gap-10 h-full">
+        <div className="h-full">
             <PageBuilder components={left_column} />
         </div>
-        <div className="flex flex-col gap-10 h-full">
+        <div className="h-full">
             <PageBuilder components={right_column} />
         </div>
     </div>

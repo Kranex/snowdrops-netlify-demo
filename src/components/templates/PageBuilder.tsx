@@ -2,12 +2,11 @@ import { Fragment } from "react";
 import ImageBlock from "../organisms/blocks/Image";
 import Gallery from "../organisms/blocks/Gallery";
 import TextBlock from "../organisms/blocks/Text"
-import DoubleImage from "../organisms/blocks/DoubleImage"
 import DoubleColumn from "../organisms/DoubleColumn";
 import SingleColumn from "../organisms/SingleColumn";
 
 export type PageComponent = {
-  type: 'single_column' | 'double_column' | 'text' | 'image' | 'double_image' | 'gallery',
+  type: 'single_column' | 'double_column' | 'text' | 'image' | 'gallery',
   title?: string
   text?: string
   image?: string
@@ -16,6 +15,7 @@ export type PageComponent = {
   gallery?: string
   caption?: string
   width?: string
+  aspect?: string
   left_caption?: string
   right_caption?: string
   content?: PageComponent[]
@@ -40,8 +40,6 @@ const PageBuilder = ({components}: Props) => {
         return <DoubleColumn component={component} />
       case 'text':
         return <TextBlock component={component} />
-      case 'double_image':
-        return <DoubleImage component={component} />
       case 'image':
         const pos = floatCount % 2 ? 'left' : 'right';
         switch (component.position) {
