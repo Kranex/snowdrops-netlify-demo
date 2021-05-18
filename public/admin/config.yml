@@ -89,8 +89,9 @@ collections:
                     name: page
                     widget: relation
                     collection: pages
-                    value_field: name
-                    search_fields:  [name, title]
+                    value_field: '{{slug}}'
+                    search_fields:  [ title ]
+                    display_fields: [ '{{slug}}' ]
       - label: Home Page
         name: home_page
         file: content/home.md
@@ -148,9 +149,12 @@ collections:
     name: pages
     folder: content/pages
     create: true
-    identifier_field: name
+    editor:
+      preview: false
+    slug: '{{path}}'
+    identifier_field: title
     fields:
-      - {label: Name, name: name, widget: string}
+      - {label: Path, name: path, widget: string, pattern: ['^[a-z0-9\-]+$', "Only lowercase letters, numbers, and dashes"]}
       - {label: Title, name: title, widget: text}
       - {label: Title Background, name: background, widget: image}
       - {label: Background Copyright, name: background_cc, widget: string}
