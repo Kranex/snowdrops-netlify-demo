@@ -19,18 +19,19 @@ const getAlignment = (position: string) => {
 }
 
 const getPadding = (alignment: string) => {
-  const SIZE = 4;
   switch (alignment) {
     case 'left':
-      return `pr-${SIZE}`
+      return `pr-4`
     case 'right':
-      return `pl-${SIZE}`
+      return `pl-4`
     case 'center':
       return `px-2`
   }
 }
 
 const Image = ({component, defaultAlignment}: Props) => {
+  const classes = 'pr-4 px-2 md:float-left md:float-right';
+
   const { image, caption, position } = component;
   
   const alignment = getAlignment(position) || defaultAlignment;
