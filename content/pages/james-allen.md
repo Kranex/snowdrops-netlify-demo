@@ -1,5 +1,5 @@
 ---
-name: james-allen
+path: james-allen
 title: |-
   James
   Allen's

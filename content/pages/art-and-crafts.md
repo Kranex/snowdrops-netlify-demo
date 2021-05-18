@@ -1,5 +1,5 @@
 ---
-name: art-and-crafts
+path: art-and-crafts
 title: Art & Crafts
 background: assets/title-background.jpg
 background_cc: cc
