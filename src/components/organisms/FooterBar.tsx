@@ -11,7 +11,6 @@ library.add(faTwitter)
 library.add(faInstagram)
 library.add(faEnvelope)
 
-
 const FooterBar = () => {
   const {company_info, logo, copyright, facebook, twitter, instagram, email} = attributes
 

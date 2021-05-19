@@ -26,9 +26,9 @@ block_types: &block_types
         label: Relative Width
         widget: select
         default: 1/3
-        options: [ 1/4, 1/3, 1/2, { label: 100%, value: full }]
+        options: [ 1/4, 1/3, 1/2, 2/3, 3/4, { label: 100%, value: full } ]
       - name: aspect
-        label:  aspect-ratio
+        label: Fixed Aspect-Ratio
         widget: select
         default: 'none'
         options: [ { label: default, value: 'none' }, 1/1, 3/2, 2/3, 4/3, 3/4, 16/9, 9/16 ]
@@ -37,6 +37,25 @@ block_types: &block_types
     widget: object
     fields:
       - { name: gallery, label: Gallery Zip, widget: file }
+  - name: tiles
+    label: Tiled Gallery
+    widget: object
+    fields:
+      - { name: gallery, label: Gallery Zip, widget: file }
+      - { name: rows, label: Rows (0 for auto), widget: number, value_type: int, default: 0, min: 0 }
+      - { name: cols, label: Columns (0 for auto), widget: number, value_type: int, default: 0, min: 0 }
+      - { name: position, label: Position, widget: select, default: auto, options: [ auto, left, center, right ]}
+      - { name: position_mobile, label: Position (Mobile View), widget: select, default: auto, options: [ auto, left, center, right ]}
+      - name: width
+        label: Relative Total Width
+        widget: select
+        default: full
+        options: [ 1/4, 1/3, 1/2, 2/3, 3/4, { label: 100%, value: full } ]
+      - name: aspect
+        label:  Fixed Aspect-Ratio
+        widget: select
+        default: 1/1
+        options: [ { label: default, value: none }, 1/1, 3/2, 2/3, 4/3, 3/4, 16/9, 9/16 ]
 
 single_column: &single_column
   name: single_column

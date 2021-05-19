@@ -7,8 +7,69 @@ content:
     content:
       - type: text
         text: "# We can't show their beautiful art and craft in the church this year,
-          but we're still keen to support these eight artists and craft makers from
-          Somerset who showed with us in 2020. With fairs, festivals and shows
-          cancelled, the last year has been tough for artists and makers everywhere.
-          They'd love to hear from you. Please be sure to visit their
-          websites/on-line shops to view their work, and buy! "
+          but we're still keen to support these eight artists and craft makers
+          from Somerset who showed with us in 2020. With fairs, festivals and
+          shows cancelled, the last year has been tough for artists and makers
+          everywhere. They'd love to hear from you. Please be sure to visit
+          their websites/on-line shops to view their work, and buy! "
+  - type: single_column
+    content:
+      - type: text
+        text: |-
+          #
+          #
+
+          # Metal garden and indoor sculpture by Chris Kampf
+      - type: tiles
+        rows: 2
+        cols: 0
+        position: left
+        position_mobile: center
+        width: 1/2
+        aspect: 1/1
+        gallery: assets/chris_kampf.zip
+      - type: text
+        text: >-
+          ​In 2014 Chris exhibited at the Royal Horticultural Society (RHS)
+          Hampton Court Flower Show for the first time and the RHS Rosemoor
+          Garden winter sculpture show, at which he is now a regular. The
+          introduction of stainless steel sculptures with its reflective
+          qualities has added another dimension to his work. Much of Chris’
+          inspiration is from nature, the humble hedgerow has given him most
+          opportunity to expand on his theme. Cow Parsleys, teasels, grasses,
+          wild roses and ferns make up the majority of his designs. Most
+          recently, a few flowers have been introduced; mini rudbeckia has
+          proved to be popular and larger versions have followed. Inspired by
+          the display at East Lambrook Manor Gardens, snowdrops have also been a
+          big hit. Now you can have snowdrops in your garden all year round.
+
+
+          Go to [Chris's website](https://www.ckgardensculptures.co.uk/)
+  - type: single_column
+    content:
+      - type: text
+        text: "# Handmade ceramics by Clare Mahoney"
+      - type: tiles
+        rows: 2
+        cols: 2
+        position: auto
+        position_mobile: center
+        width: 1/2
+        aspect: 1/1
+        gallery: assets/clair_mahoney.zip
+      - type: text
+        text: >-
+          Clare produces beautiful tiles, hand decorated with wax resist, paper
+          stencil and limited edition screen print.  Her pebbles and touch
+          stones are constructed from press moulded porcelain and individually
+          decorated with inlay, impressions and screen print. They are frost
+          proof and can be displayed in outside spaces.
+
+
+          You can see Clare's love of nature and natural shapes in everything she creates. Delicate hand-cut porcelain leaves are added, piece by piece,  to create a lace-like translucent shape.
+
+
+          'I work with surface; breaking up 2D space, abstracting natural forms and fauna to produce images that strive to capture a twisted tendril or fragile leaf. The pieces are wall mounted ceramic sculptures, or tiles for architectural or interior settings. The techniques of printmaking are used to illustrate the designs, creating a feeling of layers and elements collaged together'.
+
+
+          See Clare's work in full on her [new website](https://claremahoneyceramics.co.uk/).
