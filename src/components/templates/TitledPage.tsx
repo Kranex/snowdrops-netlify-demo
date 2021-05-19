@@ -14,7 +14,7 @@ const TitledPage = ({title, subtitle, slogan, background, background_cc, childre
     <>
       <Head>
         <title>{title}</title>
-        <meta name={`Shepton Mallet Snowdrop Festival: ${title} page.`} />
+        <meta name="description" content={`Shepton Mallet Snowdrop Festival: ${title}`} />
       </Head>
       <div className="flex-grow w-full" >
         <div className="flex justify-center w-full bg-black pt-5">
