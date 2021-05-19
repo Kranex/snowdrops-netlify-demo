@@ -1,5 +1,4 @@
 import { ReactNode } from "react"
-
 interface Props {
   title: string
   subtitle?: string
@@ -10,7 +9,6 @@ interface Props {
 }
 
 const TitledPage = ({title, subtitle, slogan, background, background_cc, children}: Props) => {
-  
   return (
     <div className="flex-grow w-full" >
       <div className="flex justify-center w-full bg-black pt-5">

@@ -1,29 +1,12 @@
 import { Fragment } from "react";
-import ImageBlock from "../organisms/blocks/Image";
-import Gallery from "../organisms/blocks/Gallery";
-import TextBlock from "../organisms/blocks/Text"
-import DoubleColumn from "../organisms/DoubleColumn";
-import SingleColumn from "../organisms/SingleColumn";
+import Image, { ImageProps } from "../organisms/blocks/Image";
+import Gallery, { GalleryProps } from "../organisms/blocks/Gallery";
+import Text, { TextProps } from "../organisms/blocks/Text"
+import DoubleColumn, { DoubleColumnProps } from "../organisms/layouts/DoubleColumn";
+import SingleColumn, { SingleColumnProps } from "../organisms/layouts/SingleColumn";
 
-export type PageComponent = {
-  type: 'single_column' | 'double_column' | 'text' | 'image' | 'gallery',
-  title?: string
-  text?: string
-  image?: string
-  left_image?: string
-  right_image?: string
-  gallery?: string
-  caption?: string
-  width?: string
-  aspect?: string
-  left_caption?: string
-  right_caption?: string
-  content?: PageComponent[]
-  left_column?: PageComponent[]
-  right_column?: PageComponent[]
-  position?: 'left' | 'right' | 'center' | 'auto'
-  position_mobile?: 'left' | 'right' |  'center' | 'auto'
-}
+
+export type PageComponent = TextProps | ImageProps | GalleryProps | SingleColumnProps | DoubleColumnProps;
 
 interface Props {
   components: PageComponent[]
@@ -33,14 +16,14 @@ const PageBuilder = ({components}: Props) => {
 
   var floatCount = 0;
 
-  const page = components.map((component, idx) => {
+  const page = components.map((component) => {
     switch(component.type) {
       case 'single_column':
-        return <SingleColumn component={component} />
+        return <SingleColumn {...component} />
       case 'double_column':
-        return <DoubleColumn component={component} />
+        return <DoubleColumn {...component} />
       case 'text':
-        return <TextBlock component={component} />
+        return <Text {...component} />
       case 'image':
         const pos = floatCount % 2 ? 'left' : 'right';
         switch (component.position) {
@@ -54,13 +37,11 @@ const PageBuilder = ({components}: Props) => {
             floatCount += 1;
             break;
         }
-        return <ImageBlock component={component} defaultAlignment={pos} />
+        return <Image defaultAlignment={pos} {...component} />
       case 'gallery':
-        return <Gallery component={component} />
+        return <Gallery {...component} />
     }
   })
-
-
 
   return (
     <>

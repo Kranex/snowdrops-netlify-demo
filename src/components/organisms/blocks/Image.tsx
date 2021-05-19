@@ -1,20 +1,20 @@
-import { Fragment } from "react";
-import { PageComponent } from "../../templates/PageBuilder"
-import TextBlock from "./Text";
-
-interface Props {
-  component: PageComponent,
+export interface ImageProps {
+  type: 'image'
+  image: string
+  caption?: string
+  position: string
+  position_mobile: string
+  width: string
+  aspect: string
   defaultAlignment?: 'left' | 'right',
 }
 
-const ImageBlock = ({component, defaultAlignment}: Props) => {
+const Image = ({image, caption, width, aspect, position, position_mobile, defaultAlignment}: ImageProps) => {
   const classes = `
     w-1/4 w-1/3 w-1/2 w-full lg:w-1/4 lg:w-1/3 lg:w-1/2 lg:w-full
     float-left float-right lg:float-left lg:float-right
     aspect-ratio-none aspect-ratio-1/1 aspect-ratio-3/2 aspect-ratio-2/3 aspect-ratio-4/3 aspect-ratio-3/4 aspect-ratio-16/9 aspect-ratio-9/16
   `;
-
-  const { image, caption, width, aspect, position, position_mobile } = component;
   
   const alignment = position === 'auto' ? defaultAlignment : position
   const alignmentMobile = position_mobile === 'auto' ? alignment : position_mobile
@@ -39,4 +39,4 @@ const ImageBlock = ({component, defaultAlignment}: Props) => {
   )
 }
 
-export default ImageBlock
+export default Image

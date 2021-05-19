@@ -1,12 +1,11 @@
 import ReactMarkdown from "react-markdown";
-import { PageComponent } from "../../templates/PageBuilder"
 
-interface Props {
-  component: PageComponent,
+export interface TextProps {
+  type: 'text'
+  text: string
 }
 
-const TextBlock = ({component}: Props) => {
-  const { text } = component;
+const Text = ({ text }: TextProps) => {
   return (
     <ReactMarkdown 
       className="text-xl text-white text-justify px-2"
@@ -21,4 +20,4 @@ const TextBlock = ({component}: Props) => {
   )
 }
 
-export default TextBlock
+export default Text

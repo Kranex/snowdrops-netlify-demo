@@ -1,12 +1,12 @@
+import PageBuilder, { PageComponent } from "../../templates/PageBuilder"
 
-import PageBuilder, { PageComponent } from "../templates/PageBuilder"
-
-interface Props {
-  component: PageComponent,
+export interface DoubleColumnProps {
+  type: 'double_column'
+  left_column: PageComponent[]
+  right_column: PageComponent[]
 }
 
-const DoubleColumn = ({component}: Props) => {
-  const { left_column, right_column } = component;
+const DoubleColumn = ({ left_column, right_column }: DoubleColumnProps) => {
 
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2 items-center">

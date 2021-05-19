@@ -1,15 +1,14 @@
-import { PageComponent } from "../../templates/PageBuilder";
 import { Carousel } from 'react-responsive-carousel';
 
 import galleries from '../../../../public/assets/galleries/manifest.yml'
 
-interface Props {
-  component: PageComponent,
+export interface GalleryProps {
+  type: 'gallery'
+  title?: string
+  gallery: string
 }
 
-const Gallery = ({component}: Props) => {
-  const { title, gallery } = component;
-
+const Gallery = ({ title, gallery }: GalleryProps) => {
   const name = gallery.split('/').pop().replace('.zip', '');
 
   const items = galleries[name].map((img: string) => (
