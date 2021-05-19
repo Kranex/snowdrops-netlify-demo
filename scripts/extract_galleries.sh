@@ -20,3 +20,5 @@ for ZIP in $ASSETS/*.zip; do
     echo "    - ${ITEM}" >> $MANIFEST
   done
 done
+
+convert -version
