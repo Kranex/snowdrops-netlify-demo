@@ -6,24 +6,27 @@ content:
   - type: single_column
     content:
       - type: text
-        text: "# We can't show their beautiful art and craft in the church this year,
+        text: >-
+          # We can't show their beautiful art and craft in the church this year,
           but we're still keen to support these eight artists and craft makers
           from Somerset who showed with us in 2020. With fairs, festivals and
           shows cancelled, the last year has been tough for artists and makers
           everywhere. They'd love to hear from you. Please be sure to visit
-          their websites/on-line shops to view their work, and buy! "
+          their websites/on-line shops to view their work, and buy!
+
+
+          #
+
+
+          #
   - type: single_column
     content:
       - type: text
-        text: |-
-          #
-          #
-
-          # Metal garden and indoor sculpture by Chris Kampf
+        text: "# Metal garden and indoor sculpture by Chris Kampf"
       - type: tiles
         rows: 2
         cols: 0
-        position: left
+        position: auto
         position_mobile: center
         width: 1/2
         aspect: 1/1
@@ -73,3 +76,60 @@ content:
 
 
           See Clare's work in full on her [new website](https://claremahoneyceramics.co.uk/).
+  - type: single_column
+    content:
+      - type: text
+        text: "# Wildlife inspired home furnishings by Raggy Roux"
+      - type: tiles
+        rows: 2
+        cols: 2
+        position: auto
+        position_mobile: center
+        width: 1/2
+        aspect: 1/1
+        gallery: assets/raggy_roux.zip
+      - type: text
+        text: "Sarah’s artisan home furnishings - unusual cushions, lampshades and other
+          soft furnishing items - are inspired by nature and British wildlife.
+
+
+          \r
+
+          Raggy Roux's work can be seen on
+          [Etsy](https://www.etsy.com/uk/shop/RaggyRoux) "
+  - type: single_column
+    content:
+      - type: text
+        text: "# Natty Deco - individual wood decorations"
+      - type: tiles
+        rows: 2
+        cols: 2
+        position: auto
+        position_mobile: center
+        width: 1/2
+        aspect: 1/1
+        gallery: assets/natty_deco.zip
+      - type: text
+        text: "Natty Deco original laser cut decorations are designed and made by Maggie
+          Powell. Working with sustainably produced Birch Wood and a beautiful
+          heavy grade Somerset Paper locally sourced from nearby St Cuthbert's
+          Mill, each decoration is drawn, designed, cut, and finished by Maggie
+          in her custom built studio in Shepton Mallet.
+
+
+          \r
+
+          \r
+
+          Maggie is increasingly working with found and recycled
+          materials and has  created a range of laser etched vintage glass
+          bottles and etched panels on ply offcuts. She has also developed some
+          larger framed pieces and etched prints.
+
+
+          \r
+
+          \r
+
+          Natty Deco's work can be seen on
+          [Etsy](https://www.etsy.com/uk/shop/NattyDeco)"

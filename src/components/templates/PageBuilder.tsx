@@ -13,24 +13,13 @@ interface Props {
   components: PageComponent[]
 }
 
+var __AlignLeft = true;
+
 const PageBuilder = ({components}: Props) => {
 
-  var floatCount = 0;
-
-  const floater = (position: Position): 'left' | 'right' => {
-      const alignment = floatCount % 2 ? 'left' : 'right';
-      switch (position) {
-        case 'left':
-          floatCount = 0;
-          break;
-        case 'right':
-          floatCount = 1;
-          break;
-        default:
-          floatCount += 1;
-          break;
-      }
-      return alignment;
+  const getDefaultAlignment = (position: Position): 'left' | 'right' => {
+      __AlignLeft = position === 'left' ? true : (position === 'right' ? false : !__AlignLeft) 
+      return __AlignLeft ? 'left' : 'right';
   }
 
   const page = components.map((component) => {
@@ -44,9 +33,9 @@ const PageBuilder = ({components}: Props) => {
       case 'gallery':
         return <Gallery {...component} />
       case 'image':
-        return <Image defaultAlignment={floater(component.position)} {...component} />
+        return <Image defaultAlignment={getDefaultAlignment(component.position)} {...component} />
       case 'tiles':
-        return <Tiles defaultAlignment={floater(component.position)} {...component} />
+        return <Tiles defaultAlignment={getDefaultAlignment(component.position)} {...component} />
     }
   })
 
