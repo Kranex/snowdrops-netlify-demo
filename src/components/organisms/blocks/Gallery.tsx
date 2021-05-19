@@ -12,7 +12,7 @@ const Gallery = ({ gallery }: GalleryProps) => {
 
   const items = galleries[name].map((img: string) => (
     <div key={img}>
-      <img className="object-contain h-xl w-full" src={`/assets/galleries/${name}/${img}`} />
+      <img className="object-contain h-xl w-full" src={`/assets/galleries/${name}/${img}`} alt={`image: ${img}`} />
     </div>
   ))
 

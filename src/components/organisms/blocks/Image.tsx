@@ -13,7 +13,7 @@ export const RawImage = ({ image, caption, aspect }: RawImageProps) => {
   return (
     <div className="relative">
       {aspect !== 'none' && <div className={`aspect-ratio-${aspect}`} />}
-      <img className={`${aspect !=='none' && 'absolute'} left-0 top-0 w-full h-full object-cover`} src={image} />
+      <img className={`${aspect !=='none' && 'absolute'} left-0 top-0 w-full h-full object-cover`} src={image} alt={image} />
       { caption &&
         <figcaption className={`absolute text-white w-full bottom-0 text-center py-2 bg-black bg-opacity-40 backdrop-filter backdrop-blur`}>{caption}</figcaption>
       }

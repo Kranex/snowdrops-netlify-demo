@@ -10,7 +10,7 @@ interface Props {
 const IconLink = ({icon, href, className}: Props) => {
   return (
     <a href={href} className={className}>
-      <FontAwesomeIcon icon={icon} />
+      <FontAwesomeIcon icon={icon} title={`link to ${href}`} />
     </a>
   )
 }
