@@ -4,14 +4,14 @@ ASSETS=public/assets
 GALLERIES=$ASSETS/galleries
 MANIFEST=$ASSETS/galleries/manifest.yml
 
-rm -rf $GALLERIES
 mkdir -p $GALLERIES
 
+echo > $MANIFEST 
 for ZIP in $ASSETS/*.zip; do
   GALLERY="$(basename -- $ZIP)"
   
   # Extract the gallery
-  unzip $ASSETS/$GALLERY -d $GALLERIES/${GALLERY%\.zip}
+  unzip -u $ASSETS/$GALLERY -d $GALLERIES/${GALLERY%\.zip}
 
   # Generate the manifest
   echo "  ${GALLERY%\.zip}:" >> $MANIFEST
