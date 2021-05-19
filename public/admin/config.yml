@@ -36,7 +36,6 @@ block_types: &block_types
     label: Gallery
     widget: object
     fields:
-      - { name: title, label: Title, widget: text, required: false }
       - { name: gallery, label: Gallery Zip, widget: file }
 
 single_column: &single_column

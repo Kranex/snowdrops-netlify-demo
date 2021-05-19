@@ -9,7 +9,7 @@ export interface DoubleColumnProps {
 const DoubleColumn = ({ left_column, right_column }: DoubleColumnProps) => {
 
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-2 items-center">
+    <div className="flex flex-col lg:grid lg:grid-cols-2 gap-2 items-center">
         <div className="h-full">
             <PageBuilder components={left_column} />
         </div>
