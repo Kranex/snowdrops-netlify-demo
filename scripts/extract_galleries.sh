@@ -22,6 +22,8 @@ for ZIP in $ASSETS/*.zip; do
 done
 
 for IMG in $(find $ASSETS -not -path $ASSETS/small/\* | grep 'jpeg\|jpg\|png\|gif\|tiff\|tif$' | sed 's,'"$ASSETS/"',,' ); do
-  mkdir -p "$ASSETS/small/$(echo $IMG | sed 's/[^\/]*$//g')"
-  convert $ASSETS/$IMG -resize 400x400\> $ASSETS/small/$IMG
+  if [ $ASSETS/$IMG -nt $ASSETS/small/$IMG ]; then
+    mkdir -p "$ASSETS/small/$(echo $IMG | sed 's/[^\/]*$//g')"
+    convert $ASSETS/$IMG -resize 400x400\> $ASSETS/small/$IMG
+  fi
 done
