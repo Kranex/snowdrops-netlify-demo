@@ -2,6 +2,7 @@
 
 # galleries
 /public/assets/galleries
+/public/assets/small
 
 # dependencies
 /node_modules
