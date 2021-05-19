@@ -19,7 +19,7 @@ const FooterBar = () => {
       <div className="flex flex-col items-center" >
         <div className="flex flex-col md:grid md:grid-cols-3 w-full max-w-screen-2xl gap-10 md:gap-20 p-10 md:p-5 border-t-2 border-white text-white">
           <div className="flex flex-col items-center gap-5">
-            <img className="object-contain w-min h-min" src={logo as string} alt="Shepton Mallet Snowdrop Festival logo" />
+            <img className="object-contain w-min h-auto" src={logo as string} alt="Shepton Mallet Snowdrop Festival logo" />
             <div className="text-center italic">{copyright}</div>
           </div>
           <div className="whitespace-pre-line text-center">
