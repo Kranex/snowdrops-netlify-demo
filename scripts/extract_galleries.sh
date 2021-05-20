@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 ASSETS=public/assets
+SMALL=$ASSETS/small
 GALLERIES=$ASSETS/galleries
 MANIFEST=$ASSETS/galleries/manifest.yml
 
+rm -rf $GALLERIES
+rm -rf $SMALL
 mkdir -p $GALLERIES
 
 echo > $MANIFEST
@@ -17,13 +20,13 @@ for ZIP in $ASSETS/*.zip; do
   echo "  ${GALLERY%\.zip}:" >> $MANIFEST
   for IMG in $GALLERIES/${GALLERY%\.zip}/*; do
     ITEM="$(basename -- $IMG)"
-    echo "    - ${ITEM}" >> $MANIFEST
+    if file "$IMG" | grep -qE "image|bitmap"; then
+      echo "    - ${ITEM}" >> $MANIFEST
+    fi
   done
 done
 
-for IMG in $(find $ASSETS -not -path $ASSETS/small/\* | grep 'jpeg\|jpg\|png\|gif\|tiff\|tif$' | sed 's,'"$ASSETS/"',,' ); do
-  if [ $ASSETS/$IMG -nt $ASSETS/small/$IMG ]; then
-    mkdir -p "$ASSETS/small/$(echo $IMG | sed 's/[^\/]*$//g')"
-    convert $ASSETS/$IMG -resize 400x400\> $ASSETS/small/$IMG
-  fi
+for IMG in $(find $ASSETS -not -path $SMALL/\* | grep 'jpeg\|jpg\|png\|gif\|tiff\|tif$' | sed 's,'"$ASSETS/"',,' ); do
+  mkdir -p "$SMALL/$(echo $IMG | sed 's/[^\/]*$//g')"
+  convert $ASSETS/$IMG -resize 400x400\> $SMALL/$IMG
 done

@@ -5,6 +5,8 @@ links:
   - type: link
     label: Art & Crafts
     page: art-and-crafts
+  - label: Gallery
+    page: gallery
   - type: link
     page: james-allen
     label: James Allen's Story

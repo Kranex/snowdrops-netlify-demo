@@ -1,0 +1,17 @@
+path: gallery
+title: Gallery
+background: assets/title-background.jpg
+background_cc: cc
+content:
+  - type: single_column
+    content:
+      - type: text
+        text: "# Sample Cats"
+      - type: tiles
+        rows: 0
+        cols: 5
+        position: center
+        position_mobile: center
+        width: full
+        aspect: 1/1
+        gallery: assets/unsamples.zip

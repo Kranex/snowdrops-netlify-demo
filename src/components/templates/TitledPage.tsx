@@ -28,7 +28,7 @@ const TitledPage = ({title, subtitle, slogan, background, background_cc, childre
           </div>
         </div>
         <div className="flex flex-col items-center py-10 px-14">
-          <div className="flex flex-col max-w-screen-lg">
+          <div className="flex flex-col w-full max-w-screen-lg">
             {children}
           </div>
         </div>
