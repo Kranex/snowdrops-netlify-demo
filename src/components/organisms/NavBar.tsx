@@ -22,14 +22,14 @@ const NavBar = () => {
   return (
     <div className="fixed z-10 top-0 flex flex-row justify-center w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur">
       <div className="flex flex-row justify-end w-full">
-        <div className="hidden md:flex flex-row p-2 items-center">
+        <div className="hidden lg:flex flex-row p-2 items-center">
           <MenuItem label="HOME" href="/" /> 
           {primary}
           <BurgerMenu>
             {secondary}
           </BurgerMenu>
         </div>
-        <div className="flex md:hidden flex-row p-2 items-center">
+        <div className="flex lg:hidden flex-row p-2 items-center">
           <BurgerMenu>
             <MenuItem label="HOME" href="/" /> 
             {primary}
