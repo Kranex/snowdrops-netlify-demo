@@ -1,12 +1,14 @@
-links:
+primary_links:
   - type: link
     label: Thanks for Getting Involved
     page: thanks
   - type: link
-    label: Art & Crafts
-    page: art-and-crafts
-  - label: Gallery
-    page: gallery
-  - type: link
     page: james-allen
     label: James Allen's Story
+secondary_links:
+  - type: link
+    label: Art & Crafts
+    page: art-and-crafts
+  - type: link
+    label: Gallery
+    page: gallery

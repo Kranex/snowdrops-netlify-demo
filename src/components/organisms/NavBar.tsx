@@ -1,5 +1,6 @@
 import attributes from '../../../content/navbar.yml'
 import MenuItem from "../molecules/MenuItem"
+import BurgerMenu from './BurgerMenu';
 
 type NavLink = {
     label: string,
@@ -8,9 +9,13 @@ type NavLink = {
 
 const NavBar = () => {
 
-  const { links } = attributes;
+  const { primary_links, secondary_links } = attributes;
 
-  const items = (links as NavLink[]).map((link: NavLink) => (
+  const primary = (primary_links as NavLink[]).map((link: NavLink) => (
+    <MenuItem key={link.page} label={link.label.toUpperCase()} href={`/${link.page}`}/>
+  ))
+  
+  const secondary = (secondary_links as NavLink[]).map((link: NavLink) => (
     <MenuItem key={link.page} label={link.label.toUpperCase()} href={`/${link.page}`}/>
   ))
 
@@ -19,11 +24,17 @@ const NavBar = () => {
       <div className="flex flex-row justify-end w-full">
         <div className="hidden md:flex flex-row p-2 items-center">
           <MenuItem label="HOME" href="/" /> 
-          {items}
+          {primary}
+          <BurgerMenu>
+            {secondary}
+          </BurgerMenu>
         </div>
         <div className="flex md:hidden flex-row p-2 items-center">
-          <MenuItem label="HOME" href="/" /> 
-          {items}
+          <BurgerMenu>
+            <MenuItem label="HOME" href="/" /> 
+            {primary}
+            {secondary}
+          </BurgerMenu>
         </div>
       </div>
     </div>

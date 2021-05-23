@@ -82,10 +82,25 @@ double_column: &double_column
       types: *block_types
 
 
+nav_link: &nav_link
+ name: nav_link
+ label: Link
+ widget: object
+ fields:
+  - { name: label, label: Label, widget: string }
+  - name: page
+    label: Page
+    widget: relation
+    collection: pages
+    value_field: '{{slug}}'
+    search_fields:  [ '{{slug}}' ]
+    display_fields: [ '{{slug}}' ]
+
+
 layout_types: &layout_types
   - *single_column
   - *double_column
-
+  
 collections:
   - name: config
     label: Config
@@ -97,18 +112,14 @@ collections:
         label: Navigation Bar
         file: content/navbar.yml
         fields:
-          - name: links
-            label: Links
+          - name: primary_links
+            label: Primary Links
             widget: list
-            fields:
-              - { name: label, label: Label, widget: string }
-              - name: page
-                label: Page
-                widget: relation
-                collection: pages
-                value_field: '{{slug}}'
-                search_fields:  [ '{{slug}}' ]
-                display_fields: [ '{{slug}}' ]
+            field: *nav_link
+          - name: secondary_links
+            label: Secondary Links
+            widget: list
+            field: *nav_link
       - name: home_page
         label: Home Page
         file: content/home.yml
