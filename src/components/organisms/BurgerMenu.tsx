@@ -23,8 +23,8 @@ const BurgerMenu = ({children}: Props) => {
         <>
           <div className="flex flex-col" ref={ref}>
             <FontAwesomeIcon className="text-white fa-rotate-90 fa-lg" icon={['fas', 'bars']} title="Menu" />
-            <div className="relative min-w-max">
-              <div className="absolute -right-5 top-4 flex flex-col min-w-max bg-black bg-opacity-80">
+            <div className="min-w-max">
+              <div className="absolute inset-0 flex flex-col min-w-max h-full bg-black bg-opacity-80">
                 {children}
               </div>
             </div> 
